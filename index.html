@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>English A1 Speaking Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;800&amp;display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { margin: 0; padding: 0; font-family: 'Fira Code', monospace; background: #000000; color: #cbd5e1; overflow-x: hidden; }
+    
+    /* Full screen fixed matrix background behind all slides */
+    #matrix-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.95; /* Increased opacity for maximum visibility */
+    }
+
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      margin: 0 auto;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(3px);
+      background: rgba(3, 7, 18, 0.78) !important; /* Slightly more translucent so Matrix shines through */
+    }
+
+    /* Holographic scanline overlay */
+    .slide-container::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.02));
+      z-index: 10;
+      background-size: 100% 4px, 6px 100%;
+      pointer-events: none;
+    }
+
+    /* Neon glow card effects */
+    .hacker-card {
+      background: rgba(3, 15, 8, 0.88);
+      border: 1px solid rgba(0, 255, 128, 0.35);
+      box-shadow: 0 0 25px rgba(0, 255, 128, 0.08), inset 0 0 15px rgba(0, 255, 128, 0.05);
+      transition: all 0.3s ease;
+    }
+    .hacker-card:hover {
+      border-color: rgba(0, 255, 128, 0.8);
+      box-shadow: 0 0 30px rgba(0, 255, 128, 0.25);
+    }
+  </style>
+  <style>
+    .lms-source-label {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: #e0e0e0;
+      color: #333;
+      border-radius: 10px;
+      padding: 4px 4px;
+      font-family: sans-serif;
+      font-size: 10px;
+      pointer-events: none;
+      font-weight: 500;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Matrix background canvas -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Slide 1: Title (Hacker Dark Theme) -->
+  <div class="slide-container" id="slide1" style="background:rgba(3,7,18,0.85);display:flex;flex-direction:column;justify-content:center;padding:64px;border-bottom: 2px solid rgba(0,255,128,0.3);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="color:#00ff80;font-size:18px;text-shadow: 0 0 10px rgba(0,255,128,0.8);">&gt;_</span>
+      <p contenteditable="true" style="font-family:'Fira Code',monospace;font-size:14px;font-weight:600;color:#00ff80;letter-spacing:2px;text-transform:uppercase;margin:0;">
+        Speaking Project // Level A1
+      </p>
+    </div>
+    <h1 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:58px;font-weight:800;color:#ffffff;margin:0;line-height:1.15;max-width:900px;text-shadow: 0 0 20px rgba(255,255,255,0.2);">
+      Maximiliano Arizmendy
+    </h1>
+    <p contenteditable="true" style="font-size:20px;color:#38bdf8;margin:20px 0 0 0;max-width:800px;font-weight:600;">
+      const status = "Initializing Software Developer Protocol...";
+    </p>
+    <div style="display:flex;gap:12px;margin-top:36px;">
+      <span style="background:rgba(0,255,128,0.1);color:#00ff80;padding:6px 14px;border-radius:6px;font-size:13px;border:1px solid rgba(0,255,128,0.3);box-shadow: 0 0 10px rgba(0,255,128,0.1);">JavaScript_v8</span>
+      <span style="background:rgba(56,189,248,0.1);color:#38bdf8;padding:6px 14px;border-radius:6px;font-size:13px;border:1px solid rgba(56,189,248,0.3);">Python_3.12</span>
+      <span style="background:rgba(168,85,247,0.1);color:#a855f7;padding:6px 14px;border-radius:6px;font-size:13px;border:1px solid rgba(168,85,247,0.3);">CyberSec</span>
+    </div>
+  </div>
+
+  <!-- Slide 2: About Yourself -->
+  <div class="slide-container" id="slide2" style="background:rgba(3,7,18,0.85);display:flex;flex-direction:column;padding:64px;border-bottom: 2px solid rgba(0,255,128,0.3);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:36px;">
+      <i class="fa-solid fa-terminal" style="color:#00ff80;font-size:28px;text-shadow: 0 0 10px rgba(0,255,128,0.8);"></i>
+      <h2 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:700;color:#ffffff;margin:0;">
+        1. Personal Information
+      </h2>
+    </div>
+    <div style="flex-grow:1;display:flex;align-items:center;gap:40px;">
+      <div style="flex:1 1 0;display:flex;flex-direction:column;gap:20px;">
+        <div class="hacker-card" style="border-left:4px solid #00ff80;border-radius:12px;padding:24px;">
+          <h3 contenteditable="true" style="font-size:16px;color:#00ff80;margin:0 0 8px 0;">// Identity</h3>
+          <p contenteditable="true" style="font-size:18px;color:#f1f5f9;margin:0;font-weight:600;">Maximiliano Arizmendy • 20 years old.</p>
+        </div>
+        <div class="hacker-card" style="border-left:4px solid #38bdf8;border-radius:12px;padding:24px;">
+          <h3 contenteditable="true" style="font-size:16px;color:#38bdf8;margin:0 0 8px 0;">// Location</h3>
+          <p contenteditable="true" style="font-size:18px;color:#f1f5f9;margin:0;font-weight:600;">Medellín, Colombia • Loma de los Bernal.</p>
+        </div>
+      </div>
+      <div class="hacker-card" style="flex:1 1 0;border-radius:20px;padding:40px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;">
+        <i class="fa-solid fa-shield-halved" style="font-size:64px;color:#00ff80;margin-bottom:20px;text-shadow: 0 0 15px rgba(0,255,128,0.5);"></i>
+        <p contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin:0;line-height:1.4;">
+          System &amp; Software Developer Student
+        </p>
+        <span style="color:#00ff80;font-size:13px;margin-top:12px;font-family:'Fira Code',monospace;">[ ACCESS GRANTED ]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: My Hobbies -->
+  <div class="slide-container" id="slide3" style="background:rgba(3,7,18,0.85);display:flex;flex-direction:column;padding:64px;border-bottom: 2px solid rgba(0,255,128,0.3);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:36px;">
+      <i class="fa-solid fa-code-branch" style="color:#38bdf8;font-size:28px;text-shadow: 0 0 10px rgba(56,189,248,0.8);"></i>
+      <h2 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:700;color:#ffffff;margin:0;">
+        2. My Hobbies &amp; Routine
+      </h2>
+    </div>
+    <div style="flex-grow:1;display:flex;gap:28px;align-items:center;">
+      <div class="hacker-card" style="border-radius:16px;padding:32px;flex:1 1 0;height:300px;display:flex;flex-direction:column;justify-content:center;">
+        <i class="fa-solid fa-keyboard" style="font-size:32px;color:#00ff80;margin-bottom:16px;"></i>
+        <h3 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;color:#ffffff;margin:0 0 10px 0;">Writing Code</h3>
+        <p contenteditable="true" style="font-size:16px;color:#94a3b8;margin:0;line-height:1.5;">Web development • Software apps • Clean algorithms.</p>
+      </div>
+      <div class="hacker-card" style="border-radius:16px;padding:32px;flex:1 1 0;height:300px;display:flex;flex-direction:column;justify-content:center;">
+        <i class="fa-solid fa-gamepad" style="font-size:32px;color:#a855f7;margin-bottom:16px;"></i>
+        <h3 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;color:#ffffff;margin:0 0 10px 0;">Tactical Gaming</h3>
+        <p contenteditable="true" style="font-size:16px;color:#94a3b8;margin:0;line-height:1.5;">Playing Valorant • Strategy &amp; reflex optimization.</p>
+      </div>
+      <div class="hacker-card" style="border-radius:16px;padding:32px;flex:1 1 0;height:300px;display:flex;flex-direction:column;justify-content:center;">
+        <i class="fa-solid fa-clock" style="font-size:32px;color:#38bdf8;margin-bottom:16px;"></i>
+        <h3 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;color:#ffffff;margin:0 0 10px 0;">Daily Flow</h3>
+        <p contenteditable="true" style="font-size:16px;color:#94a3b8;margin:0;line-height:1.5;">University duties first • Tech practice &amp; code after.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4: Interesting Facts about Hobbies -->
+  <div class="slide-container" id="slide4" style="background:rgba(3,7,18,0.85);display:flex;flex-direction:column;padding:64px;border-bottom: 2px solid rgba(0,255,128,0.3);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:36px;">
+      <i class="fa-solid fa-microchip" style="color:#a855f7;font-size:28px;text-shadow: 0 0 10px rgba(168,85,247,0.8);"></i>
+      <h2 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:700;color:#ffffff;margin:0;">
+        3. Interesting Facts
+      </h2>
+    </div>
+    <div style="flex-grow:1;display:flex;flex-direction:column;gap:20px;justify-content:center;">
+      <div class="hacker-card" style="border-left:4px solid #00ff80;border-radius:0 12px 12px 0;padding:22px 28px;">
+        <p contenteditable="true" style="font-size:18px;color:#f1f5f9;margin:0;">
+          <span style="color:#00ff80;font-weight:bold;">01.</span> Ada Lovelace • First computer programmer in history (19th century).
+        </p>
+      </div>
+      <div class="hacker-card" style="border-left:4px solid #38bdf8;border-radius:0 12px 12px 0;padding:22px 28px;">
+        <p contenteditable="true" style="font-size:18px;color:#f1f5f9;margin:0;">
+          <span style="color:#38bdf8;font-weight:bold;">02.</span> Global Scale • Millions of developers use JavaScript &amp; Python daily.
+        </p>
+      </div>
+      <div class="hacker-card" style="border-left:4px solid #a855f7;border-radius:0 12px 12px 0;padding:22px 28px;">
+        <p contenteditable="true" style="font-size:18px;color:#f1f5f9;margin:0;">
+          <span style="color:#a855f7;font-weight:bold;">03.</span> Modern Era • Web applications and AI integration are transforming tech.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Why I Like It & Positive Impact -->
+  <div class="slide-container" id="slide5" style="background:rgba(3,7,18,0.85);display:flex;flex-direction:column;padding:64px;border-bottom: 2px solid rgba(0,255,128,0.3);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:36px;">
+      <i class="fa-solid fa-bolt" style="color:#00ff80;font-size:28px;text-shadow: 0 0 10px rgba(0,255,128,0.8);"></i>
+      <h2 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:700;color:#ffffff;margin:0;">
+        4. Positive Impact
+      </h2>
+    </div>
+    <div style="flex-grow:1;display:flex;gap:40px;align-items:center;">
+      <div class="hacker-card" style="flex:1 1 0;border-radius:20px;padding:36px;">
+        <i class="fa-solid fa-wand-magic-sparkles" style="font-size:36px;color:#00ff80;margin-bottom:20px;"></i>
+        <h3 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;color:#ffffff;margin:0 0 10px 0;">Why I Like It</h3>
+        <p contenteditable="true" style="font-size:17px;color:#94a3b8;margin:0;line-height:1.5;">Create things from scratch • Solve real-world logical problems.</p>
+      </div>
+      <div class="hacker-card" style="flex:1 1 0;border-radius:20px;padding:36px;">
+        <i class="fa-solid fa-globe" style="font-size:36px;color:#38bdf8;margin-bottom:20px;"></i>
+        <h3 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;color:#ffffff;margin:0 0 10px 0;">Positive Impact</h3>
+        <p contenteditable="true" style="font-size:17px;color:#94a3b8;margin:0;line-height:1.5;">Connects people • Automates tasks • Opens career opportunities.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Closing / Q&A -->
+  <div class="slide-container" id="slide6" style="background:rgba(3,7,18,0.85);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:64px;">
+    <div style="font-size:40px;color:#00ff80;margin-bottom:16px;text-shadow: 0 0 15px rgba(0,255,128,0.8);">&lt; / &gt;</div>
+    <h2 contenteditable="true" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:48px;font-weight:800;color:#ffffff;margin:0 0 12px 0;text-shadow: 0 0 20px rgba(255,255,255,0.2);">
+      Thank You!
+    </h2>
+    <p contenteditable="true" style="font-size:18px;color:#00ff80;margin:0 0 28px 0;font-weight:600;">
+      console.log("Ready for questions!");
+    </p>
+    <div style="width:80px;height:4px;background:#00ff80;border-radius:2px;box-shadow: 0 0 10px rgba(0,255,128,0.8);"></div>
+  </div>
+
+  <script>
+    // Matrix digital rain background effect - authentic green waterfall
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      columns = Math.floor(canvas.width / fontSize);
+      drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * -canvas.height / fontSize);
+      }
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%&*+-/<>~ｦｱｳｴｵｶｷｹｺｻシスセｿﾀﾂﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ';
+    const fontSize = 14;
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops = [];
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.floor(Math.random() * -100);
+    }
+
+    function drawMatrix() {
+      // Semi-transparent black trail for intense glowing persistence
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = 'bold ' + fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars.charAt(Math.floor(Math.random() * chars.length));
+        
+        // High intensity green with bright white-green heads
+        ctx.fillStyle = Math.random() > 0.8 ? '#ffffff' : '#00ff55';
+        ctx.shadowColor = '#00ff33';
+        ctx.shadowBlur = 12;
+        
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        ctx.shadowBlur = 0;
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.97) {
+          drops[i] = 0;
+        }
+        drops[i] += 1.2; // Speed up drop flow slightly
+      }
+    }
+    resizeCanvas();
+    setInterval(drawMatrix, 25);
+  </script>
+
+</body>
+</html>
